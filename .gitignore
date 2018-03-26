@@ -1,0 +1,48 @@
+# Build Sites
+################################################
+build
+dist
+
+
+# Local Configuration
+################################################
+config/local.js
+
+
+# Dependencies
+################################################
+node_modules
+bower_components
+
+
+# Sails / Waterline / Grunt
+################################################
+.tmp
+dump.rdb
+
+
+# Node.js / NPM
+################################################
+lib-cov
+*.seed
+*.log
+*.out
+*.pid
+npm-debug.log
+.nyc_output
+coverage
+.node_history
+.env
+
+
+# Miscellaneous
+################################################
+
+*~
+*#
+.DS_Store
+.netbeans
+nbproject
+.idea
+cassettes
+.sass-cache
