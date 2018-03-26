@@ -21,7 +21,7 @@ module.exports = function(grunt) {
                 open: true,
                 livereload: true,
                 base: {
-                    path: './build',
+                    path: './docs',
                     options: {
                         index: 'index.html'
                     }

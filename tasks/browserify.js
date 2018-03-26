@@ -12,7 +12,7 @@ module.exports = function(grunt) {
 
         build: {
             src: 'src/scripts/**/*.js',
-            dest: 'build/scripts/main.js',
+            dest: 'docs/js/main.js',
             options:  {
 
                 alias: {

@@ -12,7 +12,7 @@ module.exports = function(grunt) {
 
         templates: {
             files: ['src/templates/**/*.{hbs,js}'],
-            tasks: ['static']
+            tasks: ['compile-handlebars']
         },
 
         scripts: {
@@ -26,7 +26,7 @@ module.exports = function(grunt) {
         },
 
         livereload: {
-            files: ['build/**/*'],
+            files: ['docs/**/*'],
             options: {
                 livereload: true
             }

@@ -10,7 +10,7 @@ module.exports = function(grunt) {
 
     grunt.config.set('clean', {
         build: [
-            'build/**/*'
+            'docs/**/*'
         ]
     });
 

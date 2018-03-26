@@ -25,7 +25,7 @@ module.exports = function(grunt) {
                 expand: true,
                 cwd: './src/templates/pages/',
                 src: '**/*.hbs',
-                dest: 'build',
+                dest: 'docs',
                 ext: '.html'}],
             options: {
                 global_context: {

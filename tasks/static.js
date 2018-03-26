@@ -46,7 +46,7 @@ module.exports = function(grunt) {
 
             cwd: 'src/templates/pages/',
             src: ['*.hbs'],
-            dest: 'build/'
+            dest: 'docs/'
         }
     });
 
