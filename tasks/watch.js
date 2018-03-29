@@ -25,6 +25,11 @@ module.exports = function(g) {
             tasks: ['sass']
         },
 
+        data: {
+            files: ['data/**/*'],
+            tasks: ['build']
+        },
+
         other: {
             files: [
                 'src/images/**/*',
@@ -32,11 +37,6 @@ module.exports = function(g) {
                 'src/other/**/*'
             ],
             tasks: ['copy']
-        },
-
-        data: {
-            files: ['data/**/*'],
-            tasks: ['build']
         },
 
         livereload: {

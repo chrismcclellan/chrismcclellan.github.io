@@ -1,25 +1,31 @@
 #canopy {
-    height: 50vh;
-    min-height: 600px;
-    padding-top: 30vh;
+    padding-top: 20vh;
+    padding-bottom: 20vh;
 
     .objective {
         display: block;
         float: left;
         clear: left;
-        width: 100%;
-        margin-top: $padding * 4;
-        margin-bottom: $padding * 6;
-        font-size: 1.05em;
+        padding-bottom: $padding * 2;
+        margin-bottom: $padding * 3;
+        font-size: 1.15em;
         font-weight: 100;
         font-family: "henriette", $serif-font-family;
-        max-width: 600px;
-        width: 64%;
+        max-width: 720px;
+        width: 100%;
+
+        &:first-child {
+            margin-top: $padding * 4;
+        }
+
+        &:last-child {
+            // margin-bottom: $padding * 4;
+        }
     }
 
     .title,
     .pronunciation {
-        display: inline-block;
+        display: block;
         position: relative;
         float: left;
         clear: left;
@@ -62,8 +68,8 @@
 
     .pronunciation {
         font-size: 1.1em;
+        margin-bottom: $padding * 4;
 
-        .text:after,
         .text:before {
             content: "";
             display: block;
@@ -79,20 +85,16 @@
             background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="#{$pronunciation-icon-color}" d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zM5.5 11.9V4.1L12.2 8l-6.7 3.9z"/></svg>');
         }
 
-        .text:after {
-            transform: scale(0);
-        }
-
-        .text.playing:after {
+        a.playing .text:after {
             content: "";
             display: block;
             position: absolute;
             top: 0;
             left: 0;
-            z-index: -1;
+            z-index: 1;
             height: 16px;
             width: 16px;
-            animation: playing 1s linear infinite alternate;
+            animation: playing 300s linear infinite alternate;
         }
 
         .representation {

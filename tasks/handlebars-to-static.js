@@ -8,6 +8,7 @@
 var _ = require('lodash');
 var data = require('../data');
 var helpers = require('../src/templates/helpers');
+    helpers = require('handlebars-helpers');
 
 module.exports = function(g) {
 

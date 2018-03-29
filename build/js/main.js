@@ -1202,13 +1202,8 @@ require=(function(){function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=
 }).call(this);
 
 },{}],10:[function(require,module,exports){
-var jQuery = require('jquery');
-window.$ = window.jQuery = jQuery;
 
-module.exports = (function() {
-
-
-    require('livereload-js');
+module.exports = function() {
 
     var $pronunciation = $('.pronunciation a');
     var audio = new Audio('/build/other/chrismcclellan.mp3');
@@ -1226,10 +1221,22 @@ module.exports = (function() {
         event.preventDefault();
         audio.play();
     });
+}
+},{}],11:[function(require,module,exports){
+var jQuery = require('jquery');
+window.$ = window.jQuery = jQuery;
+
+var Home = require('./home');
+
+module.exports = (function() {
+
+    require('livereload-js');
+
+    var home = new Home();
 
 })();
 
-},{"jquery":"jquery","livereload-js":8}],"jquery":[function(require,module,exports){
+},{"./home":10,"jquery":"jquery","livereload-js":8}],"jquery":[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v3.3.1
  * https://jquery.com/
@@ -11595,4 +11602,4 @@ if ( !noGlobal ) {
 return jQuery;
 } );
 
-},{}]},{},[10]);
+},{}]},{},[10,11]);

@@ -26,7 +26,11 @@
                     </p>
 
                     {{! Objective }}
-                    <p class="objective">{{about.objective}}</p>
+                    <p class="objective">
+                        {{#each about.objective}}
+                            <span>{{this}}</span>
+                        {{/each}}
+                    </p>
 
                 </div>
 
