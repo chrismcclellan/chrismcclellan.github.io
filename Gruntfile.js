@@ -28,6 +28,7 @@ module.exports = function(grunt) {
     g.registerTask('server', [
         'clean',
         'build',
+        'copy',
         'connect:server',
         'watch'
     ]);

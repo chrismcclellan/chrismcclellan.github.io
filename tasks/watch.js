@@ -25,6 +25,20 @@ module.exports = function(g) {
             tasks: ['sass']
         },
 
+        other: {
+            files: [
+                'src/images/**/*',
+                'src/fonts/**/*',
+                'src/other/**/*'
+            ],
+            tasks: ['copy']
+        },
+
+        data: {
+            files: ['data/**/*'],
+            tasks: ['build']
+        },
+
         livereload: {
             files: ['./*.html', g.option('dest') + '/**/*'],
             options: {

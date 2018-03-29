@@ -18,6 +18,8 @@ module.exports = function(g) {
     var templates = _.zipObject(paths, contents);
     var grouped = groupTemplates(templates);
 
+    console.log(data);
+
     g.config.set('handlebars_to_static', {
 
         build: {
@@ -47,7 +49,7 @@ module.exports = function(g) {
             },
             expand: true,
             cwd: 'src/templates/pages/',
-            src: ['**/*.hbs'],
+            src: ['*/page.hbs'],
             dest: 'build/pages/'
         }
     });
@@ -79,18 +81,19 @@ function groupTemplates(templates) {
     o.partials = {};
     o.layouts = {};
 
-    _.each(templates, function(val, key) {
+    _.each(templates, function(val, path) {
 
-        var islayout  = key.indexOf('layouts/') > -1;
-        var ispage    = key.indexOf('pages/') > -1;
-        var ispartial = key.indexOf('partials/') > -1;
+        path = path.split('templates/')[1].replace('/page.hbs', '').replace('.hbs', '');
 
-        if (!islayout && !ispage && !ispartial) throw "Does not match any of " + _.join(_.keys(o), ", ");
-
-        var match = islayout ? 'layouts' : ispartial ? 'partials' : 'pages';
-        var cleankey = key.split(match)[1].replace(/(\/page\.hbs)$/, '').replace(/(\.hbs)$/, '').replace(/^(\/)/, '');
-
-        _.set(o, [match, cleankey], val);
+        if (path.indexOf('partials/') > -1) {
+            _.set(o, ['partials', path.replace('pages/', '').replace('partials/', '')], val);
+        }
+        else if (path.indexOf('layouts/') > -1) {
+            _.set(o, ['layouts', path.replace('layouts/', '')], val);
+        }
+        else if (path.indexOf('pages/') > -1) {
+            _.set(o, ['pages', path.replace('pages/', '')], val);
+        }
     });
 
     return o;

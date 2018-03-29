@@ -1,6 +1,9 @@
-@import "foundation-imports";
 
+@import "settings";
+@import "fs6";
 
-body  {
-    background: #f3f3f3;
-}
+@import "layouts/**/*";
+@import "pages/**/*";
+@import "partials/**/*";
+
+@import "base";

@@ -1,4 +1,5 @@
 
 module.exports = {
-    general: require('./general')
+    about: require('./about'),
+    site: require('./site')
 };

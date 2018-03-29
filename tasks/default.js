@@ -6,6 +6,7 @@ module.exports = function(g) {
         'handlebars_to_static',
         'browserify',
         'sass',
+        'copy',
         'watch'
     ]);
 };
