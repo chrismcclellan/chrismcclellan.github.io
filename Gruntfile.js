@@ -13,17 +13,17 @@ module.exports = function(grunt) {
 
     g.option('prod', false);
     g.option('dev', !g.option('prod'));
+    g.option('src', 'src');
+    g.option('dest', 'build');
 
     for (var key in tasks)
         if (_.isFunction(tasks[key])) tasks[key](g);
-
 
     g.registerTask('build', [
         'handlebars_to_static',
         'browserify',
         'sass'
     ]);
-
 
     g.registerTask('server', [
         'clean',

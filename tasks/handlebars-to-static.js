@@ -9,14 +9,14 @@ var _       = require('lodash');
 var data    = require('../data');
 var helpers = require('../src/templates/helpers');
 
-module.exports = function(grunt) {
+module.exports = function(g) {
 
-    var paths     = getTemplatePaths(grunt);
-    var contents  = getTemplateContents(grunt, paths);
+    var paths     = getTemplatePaths(g);
+    var contents  = getTemplateContents(g, paths);
     var templates = _.zipObject(paths, contents);
     var grouped   = groupTemplates(templates);
 
-    grunt.config.set('handlebars_to_static', {
+    g.config.set('handlebars_to_static', {
 
         build: {
 
@@ -30,27 +30,35 @@ module.exports = function(grunt) {
 
                 file_context: function(src, dest, ctx) {
 
+                    // console.log('file_context', src, dest, ctx);
+
                     var key = src.replace(/\.hbs$/, '');
 
                     if (key.indexOf('pages/') > -1) 
                         key = key.split('pages/')[1];
 
                     var body = _.get(grouped.pages, key);
+                    var partials = _.set(grouped.partials, 'body', body);
+
+                    console.log('partials');
+                    console.log(partials);
+
+                    console.log('exists', g.file.exists('./src/templates/layouts/default.hbs'));
 
                     return {
                         src: './src/templates/layouts/default.hbs',
-                        partials: _.set(grouped.partials, 'body', body)
+                        partials: partials
                     };
                 }
             },
 
             cwd: 'src/templates/pages/',
             src: ['*.hbs'],
-            dest: 'docs/'
+            dest: './'
         }
     });
 
-    grunt.loadNpmTasks('grunt-handlebars-to-static');
+    g.loadNpmTasks('grunt-handlebars-to-static');
 };
 
 function getTemplatePaths(grunt) {

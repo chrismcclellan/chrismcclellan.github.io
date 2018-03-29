@@ -6,9 +6,13 @@
  *
  */
 
-module.exports = function(grunt) {
+var _ = require('lodash');
 
-    grunt.config.set('uglify', {
+module.exports = function(g) {
+
+    var dest = g.option('dest');
+
+    g.config.set('uglify', {
 
         build: {
 
@@ -18,13 +22,9 @@ module.exports = function(grunt) {
                 mangle: false
             },
 
-            files: {
-                'docs/js/main.min.js': [
-                    'docs/js/main.js'
-                ]
-            }
+            files: _.set({}, dest + '/js/main.min.js', [ dest + '/js/main.js' ])
         }
     });
 
-    grunt.loadNpmTasks('grunt-contrib-uglify-es');
+    g.loadNpmTasks('grunt-contrib-uglify-es');
 }

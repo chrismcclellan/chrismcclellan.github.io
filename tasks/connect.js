@@ -11,9 +11,9 @@ var path = require('path');
 var static = require('serve-static');
 var include = require('include-all');
 
-module.exports = function(grunt) {
+module.exports = function(g) {
 
-    grunt.config.set('connect', {
+    g.config.set('connect', {
 
         server: {
 
@@ -21,7 +21,7 @@ module.exports = function(grunt) {
                 open: true,
                 livereload: true,
                 base: {
-                    path: './docs',
+                    path: '.',
                     options: {
                         index: 'index.html'
                     }
@@ -30,7 +30,7 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.loadNpmTasks('grunt-contrib-connect');
+    g.loadNpmTasks('grunt-contrib-connect');
 };
 
 

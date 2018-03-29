@@ -6,13 +6,13 @@
  *
  */
 
-module.exports = function(grunt) {
+module.exports = function(g) {
 
-    grunt.config.set('watch', {
+    g.config.set('watch', {
 
         templates: {
             files: ['src/templates/**/*.{hbs,js}'],
-            tasks: ['compile-handlebars']
+            tasks: ['handlebars_to_static']
         },
 
         scripts: {
@@ -26,7 +26,7 @@ module.exports = function(grunt) {
         },
 
         livereload: {
-            files: ['docs/**/*'],
+            files: ['./*.html', g.option('dest') + '/**/*'],
             options: {
                 livereload: true
             }
@@ -41,5 +41,5 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.loadNpmTasks('grunt-contrib-watch');
+    g.loadNpmTasks('grunt-contrib-watch');
 };

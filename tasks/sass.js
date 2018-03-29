@@ -6,9 +6,9 @@
  *
  */
 
-module.exports = function(grunt) {
+module.exports = function(g) {
 
-    grunt.config.set('sass', {
+    g.config.set('sass', {
 
         build: {
             options: {
@@ -22,11 +22,11 @@ module.exports = function(grunt) {
                 expand: true,
                 cwd: 'src/styles',
                 src: ['*.scss'],
-                dest: 'docs/css',
+                dest: g.option('dest') + '/css',
                 ext: '.css'
             }]
         }
     });
 
-    grunt.loadNpmTasks('grunt-contrib-sass');
+    g.loadNpmTasks('grunt-contrib-sass');
 }

@@ -6,13 +6,13 @@
  *
  */
 
-module.exports = function(grunt) {
+module.exports = function(g) {
 
-    grunt.config.set('clean', {
+    g.config.set('clean', {
         build: [
-            'docs/**/*'
+            g.option('dest') + '/**/*'
         ]
     });
 
-    grunt.loadNpmTasks('grunt-contrib-clean');
+    g.loadNpmTasks('grunt-contrib-clean');
 };

@@ -6,13 +6,13 @@
  *
  */
 
-module.exports = function(grunt) {
+module.exports = function(g) {
 
-    grunt.config.set('browserify', {
+    g.config.set('browserify', {
 
         build: {
             src: 'src/scripts/**/*.js',
-            dest: 'docs/js/main.js',
+            dest: g.option('dest') + '/js/main.js',
             options:  {
 
                 alias: {
@@ -22,5 +22,5 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.loadNpmTasks('grunt-browserify');
+    g.loadNpmTasks('grunt-browserify');
 };

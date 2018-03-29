@@ -10,22 +10,22 @@ var _ = require('lodash');
 var data = require('../data');
 var helpers = require('../src/templates/helpers');
 
-module.exports = function(grunt) {
+module.exports = function(g) {
 
-    var paths = getPaths(grunt);
+    var paths = getPaths(g);
 
     var partials = _.filter(paths, function(path) {
         return path.indexOf('partials/') > -1;
     });
 
-    grunt.config.set('compile-handlebars', {
+    g.config.set('compile-handlebars', {
 
         build: {
             files: [{
                 expand: true,
                 cwd: './src/templates/pages/',
                 src: '**/*.hbs',
-                dest: 'docs',
+                dest: './',
                 ext: '.html'}],
             options: {
                 global_context: {
@@ -42,11 +42,11 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.loadNpmTasks('grunt-compile-handlebars');
+    g.loadNpmTasks('grunt-compile-handlebars');
 };
 
-function getPaths(grunt) {
-    return grunt.file.expand(['src/templates/**/*.hbs'], {
+function getPaths(g) {
+    return g.file.expand(['src/templates/**/*.hbs'], {
         cwd: './src/templates',
         filter: 'isFile'
     });

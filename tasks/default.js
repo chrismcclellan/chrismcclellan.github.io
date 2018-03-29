@@ -1,9 +1,9 @@
-module.exports = function(grunt) {
+module.exports = function(g) {
 
     // A very basic default task.
-    grunt.registerTask('default', 'Log some stuff.', [
+    g.registerTask('default', 'Log some stuff.', [
         'clean',
-        'static',
+        'handlebars_to_static',
         'browserify',
         'sass',
         'watch'
