@@ -14,6 +14,6 @@ module.exports = {
         'MongoDB',          'MySQL',         'Node.js',             'Photoshop',
         'PHP',              'React.js',      'Require.js',          'Sails.js',         
         'Sublime Text',     'SCSS',          'Visual Studio Code',  'Wacom',
-        'Webpack',          'Wordpress',     'Z Shell'
+        'Webpack',          'Wordpress'
     ]
 };
