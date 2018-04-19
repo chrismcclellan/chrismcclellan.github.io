@@ -108,6 +108,10 @@ amdefine@>=0.0.4:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
 
+angles@0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/angles/-/angles-0.2.2.tgz#3dde046faac6002ebb3faff3f63a253de903596a"
+
 ansi-align@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ansi-align/-/ansi-align-2.0.0.tgz#c36aeccba563b89ceb556f3690f0b1d9e3547f7f"
@@ -2484,6 +2488,10 @@ fragment-cache@^0.2.1:
   resolved "https://registry.yarnpkg.com/fragment-cache/-/fragment-cache-0.2.1.tgz#4290fad27f13e89be7f33799c6bc5a0abfff0d19"
   dependencies:
     map-cache "^0.2.2"
+
+framesync@^3.0.2, framesync@^3.1.7:
+  version "3.1.7"
+  resolved "https://registry.yarnpkg.com/framesync/-/framesync-3.1.7.tgz#9b9aa3eff8598625302597851a428f40c3dc1c6b"
 
 fresh@0.5.2:
   version "0.5.2"
@@ -5052,6 +5060,10 @@ peek-stream@^1.1.0:
     duplexify "^3.5.0"
     through2 "^2.0.3"
 
+percent-value@1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/percent-value/-/percent-value-1.0.7.tgz#329fc3040c3a3e7638b4810a034b0652b04a9b49"
+
 performance-now@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-0.2.0.tgz#33ef30c5c77d4ea21c5a53869d91b56d8f2555e5"
@@ -5077,6 +5089,14 @@ pinkie-promise@^2.0.0:
 pinkie@^2.0.0:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/pinkie/-/pinkie-2.0.4.tgz#72556b80cfa0d48a974e80e77248e80ed4f7f870"
+
+popmotion@8.1.22:
+  version "8.1.22"
+  resolved "https://registry.yarnpkg.com/popmotion/-/popmotion-8.1.22.tgz#71857484546ae5b7335b0704423a3a761de1fe67"
+  dependencies:
+    framesync "^3.1.7"
+    style-value-types "^1.0.4"
+    stylefire "^1.2.9"
 
 portscanner@^1.0.0:
   version "1.2.0"
@@ -6228,6 +6248,17 @@ strip-json-comments@~2.0.1:
 striptags@^3.1.0:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/striptags/-/striptags-3.1.1.tgz#c8c3e7fdd6fb4bb3a32a3b752e5b5e3e38093ebd"
+
+style-value-types@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/style-value-types/-/style-value-types-1.0.4.tgz#58df3a09281d719d981ee4a317addc434eecc877"
+
+stylefire@1.2.9, stylefire@^1.2.9:
+  version "1.2.9"
+  resolved "https://registry.yarnpkg.com/stylefire/-/stylefire-1.2.9.tgz#957f6ce8382cb41b14568303b6078e956df1baac"
+  dependencies:
+    framesync "^3.0.2"
+    style-value-types "^1.0.4"
 
 subarg@^1.0.0:
   version "1.0.0"

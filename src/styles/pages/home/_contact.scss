@@ -1,0 +1,25 @@
+#contact {
+    background: #111;
+    padding-top: 20vh;
+
+    li {
+        margin-right: 2em;
+    }
+
+    a {
+        color: rgba(white, .9);
+        padding-left: 0;
+        padding-right: 0;
+        font-weight: 400;
+        border-bottom: 3px solid transparent;
+
+        &:hover {
+            color: white;
+            border-bottom-color: yellow;
+        }
+    }
+
+    .viewport-height {
+        height: 60vh;
+    }
+}

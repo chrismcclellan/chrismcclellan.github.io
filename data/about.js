@@ -4,11 +4,7 @@ module.exports = {
     pronunciation: 'KRIS muh-KLE-len',
     birthday: 'August 02, 1983',
 
-    objective: [
-        'Me! Self marketing edition. ' +
-        'I love what I do. Always learning, improving, growing, and sharing. ' + 
-        'I am fulfilled when I am designing or coding.'
-    ],
+    objective: ['Code', 'Design', 'Nomad', 'Fulfilled'],
 
     skills: [
         'Bash',             'Backbone.js',   'Boostrap',            'Browserify',       

@@ -7,21 +7,20 @@
  */
 var _ = require('lodash');
 var data = require('../data');
-var helpers = require('../src/templates/helpers');
-    helpers = require('handlebars-helpers');
+// var helpers = require('../src/templates/helpers');
+var helpers = require('handlebars-helpers')();
 
 module.exports = function(g) {
 
-    var dest = g.option('dest');
-
-    var paths = getTemplatePaths(g);
-    var contents = getTemplateContents(g, paths);
+    var dest      = g.option('dest');
+    var paths     = getTemplatePaths(g);
+    var contents  = getTemplateContents(g, paths);
     var templates = _.zipObject(paths, contents);
-    var grouped = groupTemplates(templates);
+    var grouped   = groupTemplates(templates);
 
-    console.log(data);
+    // console.log(data);
 
-    g.config.set('handlebars_to_static', {
+    var config = {
 
         build: {
 
@@ -41,7 +40,11 @@ module.exports = function(g) {
                     var body = _.get(grouped.pages, key);
                     var partials = _.set(grouped.partials, 'body', body);
 
+                    console.log('--- helpers ---');
+                    console.log(helpers);
+
                     return {
+                        helpers: helpers,
                         src: './src/templates/layouts/default.hbs',
                         partials: partials,
                         dest: key + '.html'
@@ -53,8 +56,9 @@ module.exports = function(g) {
             src: ['*/page.hbs'],
             dest: 'build/pages/'
         }
-    });
+    };
 
+    g.config.set('handlebars_to_static', config);
     g.loadNpmTasks('grunt-handlebars-to-static');
 };
 

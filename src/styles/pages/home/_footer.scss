@@ -1,5 +1,14 @@
 #footer {
     background: #111;
-    min-height: 30vh;
-    margin-top: 30vh;
+    padding-bottom: 20vh;
+
+    .copyright {
+        width: 100%;
+        // text-align: right;
+        color: rgba(255, 255, 255, .9);
+        font-weight: 200;
+        letter-spacing: .06em;
+        font-size: .75em;
+        padding-top: 20px;
+    }
 }

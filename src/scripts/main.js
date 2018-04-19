@@ -1,12 +1,17 @@
 var jQuery = require('jquery');
 window.$ = window.jQuery = jQuery;
 
-var Home = require('./home');
+global.views = require('./views');
 
 module.exports = (function() {
 
+    global.$win = $(window);
+    global.$doc = $(document);
+    global.$bod = $('body');
+
     require('livereload-js');
 
-    var home = new Home();
+    // var favicon = new views.regions.favicon();
+    var home = new views.pages.home();
 
 })();

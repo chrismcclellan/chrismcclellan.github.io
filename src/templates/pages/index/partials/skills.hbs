@@ -1,22 +1,12 @@
 
-<div class="viewport-panel panel-align-top" id="skills">
+<div class="grid-container" id="skills">
 
-    <div class="viewport-panel-inner">
+    <div class="grid-x small-10 small-offset-1 small-up-2 medium-up-3 large-up-4 xlarge-up-4">
 
-        <div class="grid-container fluid">
-
-            <div class="grid-x">
-
-                <div class="cell grid-x medium-10 medium-offset-1 large-8 large-offset-2 small-up-2 medium-up-3 large-up-4 xlarge-up-4">
-                    {{#each about.skills}}
-                        <div class="cell">{{this}}</div>
-                    {{/each}}
-                </div>
-
-            </div>{{!-- /.grid-x --}}
-
-        </div>{{!-- /.grid-container.fluid --}}
-
-    </div>{{!-- /.viewport-panel-inner --}}
-
-</div>{{!-- /#canopy.viewport-panel --}}
+        {{#each about.skills}}
+            <div class="cell">
+                <span class="skill">{{this}}</span>
+            </div>
+        {{/each}}
+    </div>
+</div>

@@ -1,30 +1,24 @@
 <!doctype html>
 
 <html>
-
     <head>
-        
-        <title>{{#if site.title}}{{site.title}}{{^}}No Title{{/if}}</title>
-
+        <title>
+            {{~#if site.title~}}{{site.title}}
+            {{else}}{{about.name}}{{/if~}}
+        </title>
+        <meta name="keywords" content="{{join site.keywords ' '}}">
+        <meta name="description" content="{{site.description}}">
+        <link rel="icon" href="build/images/favicon.ico">
+        <link rel="icon" href="build/images/favicon.ico" type="image/gif">
         <link rel="stylesheet" type="text/css" href="build/css/main.css">
-
     </head>
 
     <body>
 
         {{> body}}
-
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-34470880-1"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'UA-34470880-1');
-        </script>
+        {{> analytics}}
 
         <script type="text/javascript" src="build/js/main.js"></script>
 
     </body>
-
 </html>

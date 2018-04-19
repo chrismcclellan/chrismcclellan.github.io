@@ -5,6 +5,7 @@
         "commit": "git add . && git commit -m \"Automated development msg\" && git push"
     },
     "devDependencies": {
+        "angles": "0.2.2",
         "babel-preset-es2015": "6.24.1",
         "babelify": "8.0.0",
         "connect": "3.6.6",
@@ -25,7 +26,10 @@
         "include-all": "4.0.3",
         "jquery": "3.3.1",
         "lodash": "4.17.5",
-        "server-static": "2.0.5"
+        "percent-value": "1.0.7",
+        "popmotion": "8.1.22",
+        "server-static": "2.0.5",
+        "stylefire": "1.2.9"
     },
     "dependencies": {
         "babel-cli": "6.26.0"
