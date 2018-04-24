@@ -13,7 +13,7 @@ module.exports = {
         'JavaScript',       'jQuery',        'Mario Paint',         'Marionette.js', 
         'MongoDB',          'MySQL',         'Node.js',             'Photoshop',
         'PHP',              'React.js',      'Require.js',          'Sails.js',         
-        'Sublime Text',     'SCSS',          'Visual Studio Code',  'Wacom',
+        'Sublime',          'SCSS',          'Visual Studio Code',  'Wacom',
         'Webpack',          'Wordpress'
     ]
 };

@@ -2769,6 +2769,19 @@ ul.no-bullet, ol.no-bullet {
 .clearfix::after {
   clear: both; }
 
+/* -------------------------------------------------------------
+  Sass CSS3 Mixins! The Cross-Browser CSS3 Sass Library
+  By: Matthieu Aussaguel, http://www.mynameismatthieu.com, @matthieu_tweets
+
+  List of CSS3 Sass Mixins File to be @imported and @included as you need
+
+  The purpose of this library is to facilitate the use of CSS3 on different browsers avoiding HARD TO READ and NEVER
+  ENDING css files
+
+  note: All CSS3 Properties are being supported by Safari 5
+  more info: http://www.findmebyip.com/litmus/#css3-properties
+
+------------------------------------------------------------- */
 #canopy .viewport-height {
   height: 80vh; }
 #canopy .title {
@@ -2802,14 +2815,6 @@ ul.no-bullet, ol.no-bullet {
       animation: objective-unindent 600ms ease-out 600ms forwards; }
     #canopy .objective span:nth-child(4):before {
       animation: objective-unindent 600ms ease-out 900ms forwards; }
-#canopy .objective.flash span:nth-child(1):before {
-  animation: objective-flash-1 60s steps(1) 30s infinite; }
-#canopy .objective.flash span:nth-child(2):before {
-  animation: objective-flash-2 60s steps(1) 0s infinite; }
-#canopy .objective.flash span:nth-child(3):before {
-  animation: objective-flash-3 60s steps(1) 120s infinite; }
-#canopy .objective.flash span:nth-child(4):before {
-  animation: objective-flash-2 60s steps(1) 60s infinite; }
 
 @keyframes objective-unindent {
   0% {
@@ -2864,12 +2869,46 @@ ul.no-bullet, ol.no-bullet {
   height: 100%;
   min-height: 100vh;
   padding-bottom: 100%;
-  overflow: hidden !important;
-  background-color: #111;
-  background-image: url("/build/images/chrismcclellan-before.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center; }
+  overflow: hidden !important; }
+  #me .photo {
+    display: block;
+    width: 120%;
+    height: 100%;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    overflow: hidden !important;
+    -webkit-transform: rotate(-3deg);
+    -khtml-transform: rotate(-3deg);
+    -moz-transform: rotate(-3deg);
+    -ms-transform: rotate(-3deg);
+    -o-transform: rotate(-3deg);
+    transform: rotate(-3deg);
+    -webkit-transform-origin: 100% 0;
+    -moz-transform-origin: 100% 0;
+    transform-origin: 100% 0; }
+    #me .photo:before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0%;
+      right: 0%;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      background: #111 url("/build/images/chrismcclellan-before.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      -webkit-transform: rotate(3deg);
+      -khtml-transform: rotate(3deg);
+      -moz-transform: rotate(3deg);
+      -ms-transform: rotate(3deg);
+      -o-transform: rotate(3deg);
+      transform: rotate(3deg);
+      -webkit-transform-origin: 100% 0;
+      -moz-transform-origin: 100% 0;
+      transform-origin: 100% 0; }
   #me:before {
     content: "#crushingit";
     position: absolute;
@@ -2877,43 +2916,53 @@ ul.no-bullet, ol.no-bullet {
     left: 50%;
     z-index: 2;
     color: #fff;
-    font-size: 9vw;
+    font-size: 11vh;
     font-weight: 900;
     white-space: nowrap;
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    -webkit-animation: crushing 2s infinite;
-    -moz-animation: crushing 2s infinite;
-    animation: crushing 2s infinite; }
+    color: transparent;
+    -webkit-transform: translate(-50%, -50%) rotate(90deg);
+    -moz-transform: translate(-50%, -50%) rotate(90deg);
+    transform: translate(-50%, -50%) rotate(90deg);
+    -webkit-animation: crushing 3s steps(1) infinite;
+    -moz-animation: crushing 3s steps(1) infinite;
+    animation: crushing 3s steps(1) infinite; }
+    @media screen and (min-width: 40em) {
+      #me:before {
+        font-size: 14vw;
+        -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+        -moz-transform: translate(-50%, -50%) rotate(-45deg);
+        transform: translate(-50%, -50%) rotate(-45deg); } }
+    @media screen and (min-width: 64em) {
+      #me:before {
+        font-size: 9vw;
+        -webkit-transform: translate(-50%, -50%) rotate(0deg);
+        -moz-transform: translate(-50%, -50%) rotate(0deg);
+        transform: translate(-50%, -50%) rotate(0deg); } }
 
 @keyframes crushing {
-  0%, 100% {
+  0% {
     color: rgba(0, 255, 255, 0.75);
+    text-shadow: 0.2vw 0.2vw 0 rgba(255, 255, 0, 0.75), -0.4vw 0 rgba(0, 255, 255, 0.75); }
+  100% {
     text-shadow: 0.2vw 0.2vw 0 rgba(255, 255, 0, 0.75), -0.4vw 0 rgba(0, 255, 255, 0.75); }
   10% {
     color: rgba(255, 0, 255, 0.75);
     text-shadow: -0.2vw 0.2vw 0 rgba(0, 255, 255, 0.75), 0vw 0 rgba(255, 0, 255, 0.75); }
   20% {
-    color: rgba(255, 255, 0, 0.75);
     text-shadow: 0vw 0 rgba(255, 255, 0, 0.75), -0.2vw 0.2vw 0 rgba(255, 255, 0, 0.75); }
   30% {
-    color: rgba(0, 0, 0, 0.75);
+    color: rgba(255, 255, 0, 0.75);
     text-shadow: 0vw 0 rgba(0, 255, 255, 0.75), 0.2vw 0.2vw 0 rgba(0, 0, 0, 0.75); }
   40% {
-    color: rgba(255, 255, 255, 0.75);
     text-shadow: 0.2vw 0.2vw 0 rgba(255, 0, 255, 0.75), -0.2vw 0.2vw 0 rgba(255, 255, 255, 0.75); }
   50% {
     color: rgba(0, 255, 255, 0.75);
     text-shadow: 0.2vw 0.2vw 0 rgba(255, 255, 0, 0.75), -0.4vw 0 rgba(0, 255, 255, 0.75); }
   60% {
-    color: rgba(255, 0, 255, 0.75);
     text-shadow: -0.2vw 0.2vw 0 rgba(0, 255, 255, 0.75), 0vw 0 rgba(255, 0, 255, 0.75); }
   70% {
-    color: rgba(255, 255, 0, 0.75);
     text-shadow: 0vw 0 rgba(255, 255, 0, 0.75), -0.2vw 0.2vw 0 rgba(255, 255, 0, 0.75); }
   80% {
-    color: rgba(0, 0, 0, 0.75);
     text-shadow: 0vw 0 rgba(0, 255, 255, 0.75), 0vw 0 rgba(0, 0, 0, 0.75); }
   90% {
     color: rgba(255, 255, 255, 0.75);
