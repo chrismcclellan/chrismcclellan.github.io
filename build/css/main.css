@@ -2769,18 +2769,19 @@ ul.no-bullet, ol.no-bullet {
 .clearfix::after {
   clear: both; }
 
+#canopy .viewport-height {
+  height: 80vh; }
 #canopy .title {
   display: block;
   color: #071425;
   font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   font-weight: 900;
   white-space: nowrap; }
-#canopy .viewport-height {
-  height: 90vh; }
 #canopy .objective {
   font-weight: 500;
   letter-spacing: .06em;
-  color: transparent; }
+  color: transparent;
+  margin-top: 10px; }
   #canopy .objective span {
     display: inline-block;
     position: relative;
@@ -2790,19 +2791,25 @@ ul.no-bullet, ol.no-bullet {
       content: attr(title);
       position: absolute;
       top: 0;
+      right: 100%;
+      z-index: 1;
       color: #000; }
-#canopy .objective span:before {
-  right: 100%;
-  z-index: 1;
-  color: #212c3a; }
-#canopy .objective span:nth-child(1):before {
-  animation: objective-unindent 600ms ease-out 0ms forwards; }
-#canopy .objective span:nth-child(2):before {
-  animation: objective-unindent 600ms ease-out 300ms forwards; }
-#canopy .objective span:nth-child(3):before {
-  animation: objective-unindent 600ms ease-out 600ms forwards; }
-#canopy .objective span:nth-child(4):before {
-  animation: objective-unindent 600ms ease-out 900ms forwards; }
+    #canopy .objective span:nth-child(1):before {
+      animation: objective-unindent 600ms ease-out 0ms forwards; }
+    #canopy .objective span:nth-child(2):before {
+      animation: objective-unindent 600ms ease-out 300ms forwards; }
+    #canopy .objective span:nth-child(3):before {
+      animation: objective-unindent 600ms ease-out 600ms forwards; }
+    #canopy .objective span:nth-child(4):before {
+      animation: objective-unindent 600ms ease-out 900ms forwards; }
+#canopy .objective.flash span:nth-child(1):before {
+  animation: objective-flash-1 60s steps(1) 30s infinite; }
+#canopy .objective.flash span:nth-child(2):before {
+  animation: objective-flash-2 60s steps(1) 0s infinite; }
+#canopy .objective.flash span:nth-child(3):before {
+  animation: objective-flash-3 60s steps(1) 120s infinite; }
+#canopy .objective.flash span:nth-child(4):before {
+  animation: objective-flash-2 60s steps(1) 60s infinite; }
 
 @keyframes objective-unindent {
   0% {
@@ -2813,17 +2820,6 @@ ul.no-bullet, ol.no-bullet {
   66.66% {
     color: magenta; }
   100% {
-    right: 0%;
-    color: black; } }
-@keyframes objective-hover {
-  0%, 100% {
-    right: 0%;
-    color: cyan; }
-  25% {
-    color: magenta; }
-  50% {
-    color: yellow; }
-  75% {
     right: 0%;
     color: black; } }
 #contact {
@@ -2868,66 +2864,66 @@ ul.no-bullet, ol.no-bullet {
   height: 100%;
   min-height: 100vh;
   padding-bottom: 100%;
-  overflow: hidden;
-  background: #111; }
-  #me .was,
-  #me .now {
-    display: block;
+  overflow: hidden !important;
+  background-color: #111;
+  background-image: url("/build/images/chrismcclellan-before.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
+  #me:before {
+    content: "#crushingit";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 9;
-    overflow: hidden; }
-    #me .was:before,
-    #me .now:before {
-      content: "#y2now";
-      position: absolute;
-      top: 40%;
-      right: 25%;
-      z-index: 2;
-      color: #fff;
-      font-size: 9vw;
-      font-weight: 900;
-      white-space: nowrap; }
-    #me .was:after,
-    #me .now:after {
-      content: "";
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 1;
-      width: 100%;
-      height: 100%;
-      background-image: url("/build/images/chrismcclellan-before.jpg");
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center; }
-  #me .was:before {
-    content: "#y2kay";
-    left: 25%;
-    right: auto;
-    color: black;
-    text-shadow: -12px 0 rgba(0, 255, 255, 0.5), 6px 6px 0 rgba(255, 0, 255, 0.5); }
-  #me .now {
-    left: auto;
-    right: 0%;
-    z-index: 10; }
-    #me .now:before {
-      color: white;
-      text-shadow: -12px 0 rgba(255, 0, 255, 0.5), 6px 6px 0 rgba(255, 255, 0, 0.5); }
-    #me .now:after {
-      z-index: 1;
-      background-image: url("/build/images/chrismcclellan-after.jpg"); }
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    color: #fff;
+    font-size: 9vw;
+    font-weight: 900;
+    white-space: nowrap;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-animation: crushing 2s infinite;
+    -moz-animation: crushing 2s infinite;
+    animation: crushing 2s infinite; }
 
+@keyframes crushing {
+  0%, 100% {
+    color: rgba(0, 255, 255, 0.75);
+    text-shadow: 0.2vw 0.2vw 0 rgba(255, 255, 0, 0.75), -0.4vw 0 rgba(0, 255, 255, 0.75); }
+  10% {
+    color: rgba(255, 0, 255, 0.75);
+    text-shadow: -0.2vw 0.2vw 0 rgba(0, 255, 255, 0.75), 0vw 0 rgba(255, 0, 255, 0.75); }
+  20% {
+    color: rgba(255, 255, 0, 0.75);
+    text-shadow: 0vw 0 rgba(255, 255, 0, 0.75), -0.2vw 0.2vw 0 rgba(255, 255, 0, 0.75); }
+  30% {
+    color: rgba(0, 0, 0, 0.75);
+    text-shadow: 0vw 0 rgba(0, 255, 255, 0.75), 0.2vw 0.2vw 0 rgba(0, 0, 0, 0.75); }
+  40% {
+    color: rgba(255, 255, 255, 0.75);
+    text-shadow: 0.2vw 0.2vw 0 rgba(255, 0, 255, 0.75), -0.2vw 0.2vw 0 rgba(255, 255, 255, 0.75); }
+  50% {
+    color: rgba(0, 255, 255, 0.75);
+    text-shadow: 0.2vw 0.2vw 0 rgba(255, 255, 0, 0.75), -0.4vw 0 rgba(0, 255, 255, 0.75); }
+  60% {
+    color: rgba(255, 0, 255, 0.75);
+    text-shadow: -0.2vw 0.2vw 0 rgba(0, 255, 255, 0.75), 0vw 0 rgba(255, 0, 255, 0.75); }
+  70% {
+    color: rgba(255, 255, 0, 0.75);
+    text-shadow: 0vw 0 rgba(255, 255, 0, 0.75), -0.2vw 0.2vw 0 rgba(255, 255, 0, 0.75); }
+  80% {
+    color: rgba(0, 0, 0, 0.75);
+    text-shadow: 0vw 0 rgba(0, 255, 255, 0.75), 0vw 0 rgba(0, 0, 0, 0.75); }
+  90% {
+    color: rgba(255, 255, 255, 0.75);
+    text-shadow: 0.2vw 0.2vw 0 rgba(255, 0, 255, 0.75), -0.4vw 0 rgba(255, 255, 255, 0.75); } }
 #skills {
   margin-bottom: 25vh; }
   #skills .skill {
     display: block;
-    line-height: 48px;
-    min-height: 48px;
+    line-height: 60px;
+    min-height: 60px;
     font-weight: 400;
     color: #111924;
     font-size: .9em; }

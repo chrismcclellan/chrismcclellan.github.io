@@ -4,76 +4,162 @@
     height: 100%;
     min-height: 100vh;
     padding-bottom: 100%;
-    overflow: hidden;
-    background: #111;
+    overflow: hidden !important;
 
-    .was,
-    .now {
-        display: block;
+    background-color: #111;
+    background-image: url('/build/images/chrismcclellan-before.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    &:before {
+        content: "#crushingit";
         position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 9;
-        overflow: hidden;
+        top: 50%;
+        left: 50%;
+        z-index: 2;
+        color: #fff;
+        font-size: 9vw;
+        font-weight: 900;
+        white-space: nowrap;
 
-        &:before {
-            content: "#stillcrushingit";
-            position: absolute;
-            top: 40%;
-            right: 25%;
-            z-index: 2;
-            color: #fff;
-            font-size: 9vw;
-            font-weight: 900;
-            white-space: nowrap;
-        }
+        $transform: translate(-50%, -50%);
+        -webkit-transform: $transform;
+        -moz-transform: $transform;
+        transform: $transform;
 
-        &:after {
-            content: "";
-            display: block;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 1;
-            width: 100%;
-            height: 100%;
-            background-image: url('/build/images/chrismcclellan-before.jpg');
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-            // transform: rotate(-10deg);
-        }
+        $animation: crushing 2s infinite;
+        -webkit-animation: $animation;
+        -moz-animation: $animation;
+        animation: $animation;
     }
 
-    .was {
-        $size: 6px;
 
-        &:before {
-            content: "#crushingit";
-            left: 25%;
-            right: auto;
-            color: black;
-            text-shadow: -$size -$size 0 rgba(cyan, .5), $size $size 0 rgba(magenta, .5);
-        }
+    // .was,
+    // .now {
+    //     display: block;
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     width: 100%;
+    //     height: 100%;
+    //     z-index: 9;
+    //     overflow: hidden;
+
+    //     &:before {
+    //         content: "#stillcrushingit";
+    //         position: absolute;
+    //         top: 40%;
+    //         right: 25%;
+    //         z-index: 2;
+    //         color: #fff;
+    //         font-size: 9vw;
+    //         font-weight: 900;
+    //         white-space: nowrap;
+    //     }
+
+    //     &:after {
+    //         content: "";
+    //         display: block;
+    //         position: absolute;
+    //         top: 0;
+    //         left: 0;
+    //         z-index: 1;
+    //         width: 100%;
+    //         height: 100%;
+    //         background-image: url('/build/images/chrismcclellan-before.jpg');
+    //         background-repeat: no-repeat;
+    //         background-size: cover;
+    //         background-position: center;
+    //     }
+    // }
+
+    // .was {
+    //     $size: 6px;
+
+    //     &:before {
+    //         content: "#crushingit";
+    //         left: 25%;
+    //         right: auto;
+    //         color: black;
+    //         text-shadow: -$size -$size 0 rgba(cyan,    .5), 
+    //                       $size  $size 0 rgba(magenta, .5);
+    //     }
+    // }
+
+    // .now {
+    //     $size: 6px;
+
+    //     left: auto;
+    //     right: 0%;
+    //     z-index: 10;
+
+    //     &:before {
+    //         color: white;
+    //         text-shadow: -$size -$size 0 rgba(magenta, .5), 
+    //                       $size  $size 0 rgba(yellow,  .5);
+    //     }
+
+    //     &:after {
+    //         z-index: 1;
+    //         background-image: url('/build/images/chrismcclellan-after.jpg');
+    //     }
+    // }
+}
+
+
+
+@keyframes crushing {
+
+    $px: .2vw;
+
+    0%, 100% {
+        color: rgba(cyan, .75);
+        text-shadow: $px $px 0 rgba(yellow, .75), -$px -$px 0 rgba(cyan, .75);
     }
 
-    .now {
-        $size: 6px;
+    10% {
+        color: rgba(magenta, .75);
+        text-shadow: -$px $px 0 rgba(cyan, .75), $px -$px 0 rgba(magenta, .75);
+    }
 
-        left: auto;
-        right: 0%;
-        z-index: 10;
+    20% {
+        color: rgba(yellow, .75);
+        text-shadow: $px -$px 0 rgba(yellow, .75), -$px $px 0 rgba(yellow, .75);
+    }
 
-        &:before {
-            color: white;
-            text-shadow: -$size -$size 0 rgba(magenta, .5), $size $size 0 rgba(yellow, .5);
-        }
+    30% {
+        color: rgba(black, .75);
+        text-shadow: $px -$px 0 rgba(cyan, .75), $px $px 0 rgba(black, .75);
+    }
 
-        &:after {
-            z-index: 1;
-            background-image: url('/build/images/chrismcclellan-after.jpg');
-        }
+    40% {
+        color: rgba(white, .75);
+        text-shadow: $px $px 0 rgba(magenta, .75), -$px $px 0 rgba(white, .75);
+    }
+
+    50% {
+        color: rgba(cyan, .75);
+        text-shadow: $px $px 0 rgba(yellow, .75), -$px -$px 0 rgba(cyan, .75);
+    }
+
+    60% {
+        color: rgba(magenta, .75);
+        text-shadow: -$px $px 0 rgba(cyan, .75), $px -$px 0 rgba(magenta, .75);
+    }
+
+    70% {
+        color: rgba(yellow, .75);
+        text-shadow: $px -$px 0 rgba(yellow, .75), -$px $px 0 rgba(yellow, .75);
+    }
+
+    80% {
+        color: rgba(black, .75);
+        text-shadow: $px -$px 0 rgba(cyan, .75), $px -$px 0 rgba(black, .75);
+    }
+
+    90% {
+        color: rgba(white, .75);
+        text-shadow: $px $px 0 rgba(magenta, .75), -$px -$px 0 rgba(white, .75);
     }
 }
