@@ -8,8 +8,8 @@
         position: relative;
 
         &:hover > .item {
-            opacity: .25;
-            filter: blur(4);
+            opacity: .5;
+            filter: blur(3px);
         }
     }
 

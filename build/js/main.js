@@ -26907,7 +26907,7 @@ var Muuri = require('muuri');
 
 module.exports = function() {
 
-    var $grid = $('#design .masonry');
+    var $grid = $('#design .grid');
     var $items = $('.item', $grid);
 
     var grid = new Muuri('.grid', {
@@ -26935,7 +26935,7 @@ module.exports = function() {
 
         // Layout
         layout: {
-            fillGaps: true,
+            // fillGaps: true,
         //     horizontal: false,
         //     alignRight: false,
         //     alignBottom: false,
@@ -26943,8 +26943,8 @@ module.exports = function() {
         },
         // layoutOnResize: 100,
         // layoutOnInit: true,
-        // layoutDuration: 300,
-        // layoutEasing: 'ease',
+        layoutDuration: 100,
+        layoutEasing: 'linear',
 
         // Sorting
         // sortData: null,

@@ -30,7 +30,7 @@ module.exports = function() {
 
         // Layout
         layout: {
-            fillGaps: true,
+            // fillGaps: true,
         //     horizontal: false,
         //     alignRight: false,
         //     alignBottom: false,
@@ -38,8 +38,8 @@ module.exports = function() {
         },
         // layoutOnResize: 100,
         // layoutOnInit: true,
-        // layoutDuration: 300,
-        // layoutEasing: 'ease',
+        layoutDuration: 100,
+        layoutEasing: 'linear',
 
         // Sorting
         // sortData: null,
