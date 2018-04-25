@@ -26,6 +26,7 @@
         "include-all": "4.0.3",
         "jquery": "3.3.1",
         "lodash": "4.17.5",
+        "muuri": "0.5.4",
         "percent-value": "1.0.7",
         "popmotion": "8.1.22",
         "server-static": "2.0.5",

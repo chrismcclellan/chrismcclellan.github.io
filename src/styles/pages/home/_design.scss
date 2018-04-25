@@ -1,13 +1,67 @@
 #design {
-    padding-top: 20vh;
-    padding-bottom: 40vh;
-    
-    h3 {
-        // font-size: 1em;
-        font-weight: 500;
+    display: block;
+    height: auto;
+    padding: 20vh 1vw 20vh;
 
-        small {
-            font-weight: 300;
+    .grid {
+        width: 98vw;
+        position: relative;
+
+        &:hover > .item {
+            opacity: .25;
+            filter: blur(4);
         }
+    }
+
+    .item {
+        display: block;
+        position: absolute;
+        width: 33.32%;
+        height: auto;
+        margin: 0;
+        z-index: 1;
+        background: #fff;
+        color: #fff;
+        border: 20px solid #fff;
+        transition: all 300ms ease-in-out, 
+                    margin-left 300ms cubic-bezier(.66,-0.01,.48,1.37),
+                    margin-top 300ms cubic-bezier(.66,-0.01,.48,1.37),
+                    width 300ms cubic-bezier(.66,-0.01,.48,1.37);
+
+        &:hover {
+            opacity: 1 !important;
+            filter: blur(0) !important;
+            margin-top: -.5%;
+            margin-left: -1%;
+            z-index: 999;
+            width: 35.32%;
+            // box-shadow: 0 6px 24px rgba(0, 0, 0, .05);
+        }
+
+        img  {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            min-height: 100%;
+        }
+
+        &.muuri-item-dragging {
+            z-index: 3;
+        }
+
+        &.muuri-item-releasing {
+            z-index: 2;
+        }
+
+        &.muuri-item-hidden {
+            z-index: 0;
+        }
+    }
+
+    .content {
+        position: relative;
+        width: 100%;
+        height: 100%;
     }
 }

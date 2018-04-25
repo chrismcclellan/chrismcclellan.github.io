@@ -2845,12 +2845,49 @@ ul.no-bullet, ol.no-bullet {
     height: 60vh; }
 
 #design {
-  padding-top: 20vh;
-  padding-bottom: 40vh; }
-  #design h3 {
-    font-weight: 500; }
-    #design h3 small {
-      font-weight: 300; }
+  display: block;
+  height: auto;
+  padding: 20vh 1vw 20vh; }
+  #design .grid {
+    width: 98vw;
+    position: relative; }
+    #design .grid:hover > .item {
+      opacity: .25;
+      filter: blur(4); }
+  #design .item {
+    display: block;
+    position: absolute;
+    width: 33.32%;
+    height: auto;
+    margin: 0;
+    z-index: 1;
+    background: #fff;
+    color: #fff;
+    border: 20px solid #fff;
+    transition: all 300ms ease-in-out, margin-left 300ms cubic-bezier(0.66, -0.01, 0.48, 1.37), margin-top 300ms cubic-bezier(0.66, -0.01, 0.48, 1.37), width 300ms cubic-bezier(0.66, -0.01, 0.48, 1.37); }
+    #design .item:hover {
+      opacity: 1 !important;
+      filter: blur(0) !important;
+      margin-top: -.5%;
+      margin-left: -1%;
+      z-index: 999;
+      width: 35.32%; }
+    #design .item img {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      min-height: 100%; }
+    #design .item.muuri-item-dragging {
+      z-index: 3; }
+    #design .item.muuri-item-releasing {
+      z-index: 2; }
+    #design .item.muuri-item-hidden {
+      z-index: 0; }
+  #design .content {
+    position: relative;
+    width: 100%;
+    height: 100%; }
 
 #footer {
   background: #111;
@@ -2872,7 +2909,7 @@ ul.no-bullet, ol.no-bullet {
   overflow: hidden !important; }
   #me .photo {
     display: block;
-    width: 120%;
+    width: 110%;
     height: 100%;
     position: absolute;
     top: 0%;
@@ -2896,7 +2933,7 @@ ul.no-bullet, ol.no-bullet {
       z-index: 1;
       width: 100%;
       height: 100%;
-      background: #111 url("/build/images/chrismcclellan-before.jpg");
+      background: url("/build/images/chrismcclellan-before.jpg");
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
