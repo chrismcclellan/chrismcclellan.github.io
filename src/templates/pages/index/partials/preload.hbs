@@ -1,0 +1,18 @@
+<div class="grid-container fluid" id="preload">
+
+    {{#each preload.lines}}
+        <div class="grid-x line hide {{#if cmd}}prfx{{/if}}">
+            <div class="cell shrink">
+
+                {{#each this}}
+                    {{#eq key "cmd"~}}
+                        <span class="{{{@key}}}" data-cmd="{{{@this}}}"></span>
+                    {{else}}
+                        <span class="{{{@key}}}">{{{this}}}</span>
+                    {{/eq}}
+                {{/each}}
+            </div>
+        </div><!-- /.line.xy-grid -->
+    {{/each}}
+
+</div><!-- /.console.grid-container -->

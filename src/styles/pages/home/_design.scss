@@ -9,7 +9,7 @@
 
         &:hover > .item {
             opacity: .5;
-            filter: blur(3px);
+            // filter: blur(3px);
         }
     }
 
@@ -23,7 +23,7 @@
         background: #fff;
         color: #fff;
         border: 20px solid #fff;
-        transition: all 300ms ease-in-out, 
+        transition: all 300ms ease-in-out,
                     margin-left 300ms cubic-bezier(.66,-0.01,.48,1.37),
                     margin-top 300ms cubic-bezier(.66,-0.01,.48,1.37),
                     width 300ms cubic-bezier(.66,-0.01,.48,1.37);
